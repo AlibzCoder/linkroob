@@ -1087,7 +1087,7 @@ if(is_user_logged_in()){
 												if($post->upgrade){echo "ارتقاع یافته";$free = 0;}
 												if($free){echo 'رایگان';}
 											}else if($post->post_status=="draft"){
-												echo '<span>در انتظار فعالسازی<br/> توسط مدیر</span>';
+												echo '<b><span>در انتظار فعالسازی<br/> توسط مدیر</span></b>';
 											}
 									  	?>
 									  </div></td>

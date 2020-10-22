@@ -8,3 +8,8 @@
 
 ### use the sql file in root directory for your database
 - linkroob.sql
+
+
+and dont forget to add this to config.php
+
+define('WP_POST_REVISIONS', false);
