@@ -921,6 +921,12 @@ ul {
 	cursor: pointer;
 	overflow: hidden;
 }
+.custom-file-upload img{
+	max-width: 100%;
+	border-radius: 50%;
+	margin-top: 1rem;
+	box-shadow: 0 10px 20px -15px rgb(0 0 0 / 65%);
+}
 .form-chosen {
 	width: 216px;
 }
@@ -1911,4 +1917,75 @@ ul {
 	.footer-left a{
         font-size: 10px;
     }
+}
+
+
+
+
+
+
+
+.crop-box{
+	position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -100%;
+    left: 0;
+    z-index: 10000000;
+    background: rgb(0 0 0 / 50%);
+    backdrop-filter: blur(5px);
+    display: grid;
+	grid-template-rows: 10% auto;
+	transition: top 0.5s;
+}
+.crop-box-active{top: 0;}
+.crop-header {
+    display: grid;
+    grid-template-columns: 35px auto 35px;
+    direction: rtl;
+    padding: 0 30%;
+    align-items: center;
+    color: #FFF;
+    background: rgb(0 0 0 / 0.5);
+}
+.crop-done,.crop-exit {
+    height: 30px;
+    border: 3px solid;
+    border-radius: 0.5rem;
+    transition: all .2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.crop-done:hover,
+.crop-exit:hover {
+    background: #FFF;
+    border-color: #FFF;
+    color: #333;
+}
+.crop-header h3{
+	direction: rtl;
+    text-indent: 2rem;
+}
+
+.crop{
+	height: 90vh;
+}
+.crop img{
+	height: 100%;
+}
+.crop-box .cropper-crop-box{
+	border-radius: 50%;
+    overflow: hidden;
+}
+
+@media screen and (max-width:900px){
+	.crop-header{
+		padding: 0 10%;
+	}
+	.crop img{
+		height: auto;
+		width: 100%;
+	}
 }

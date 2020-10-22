@@ -76,7 +76,15 @@ function upload_img($file,$name = null,$img_size_important = 1,$path = "/img/"){
 	}
 	return $Error;
 }
-
+function saveDataURL($data,$name,$path = "/img/"){
+	$imgData = str_replace(' ','+',$data);
+	$imgData =  substr($imgData,strpos($imgData,",")+1);
+	$imgData = base64_decode($imgData);
+	$filePath = wp_get_upload_dir()['basedir'].$path.$name.'.jpg';
+	$file = fopen($filePath, 'w');
+	fwrite($file, $imgData);
+	fclose($file);
+}
 
 
 

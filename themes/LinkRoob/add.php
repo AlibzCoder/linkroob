@@ -7,6 +7,7 @@ get_header();
 
 $everyThingOK = 1;
 $registerOK = 1;
+$city = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$cat = null;
 	$subcat = null;
 	$hashtags = null;
-	$city = null;
+	
 	$title = null;
 	$chanel_id = null;
 	$joinchat_url = null;
@@ -172,13 +173,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				}
 			}
 			if($everyThingOK){
-				$imageError = upload_img($_FILES["chanel_img"],$chanel_id);
-				if(empty($imageError)){
+				if(!empty($_POST["chanel_img"])){
+					saveDataURL($_POST["chanel_img"],$chanel_id);
 					$status = current_user_can('administrator') ? 'publish' : 'draft';
 					add_chanel($title,$sn,$cat,$subcat,$chanel_id,$joinchat_url,$description,$hashtags,$city,$status);
 					wp_redirect(home_url('user-panel'));
 					exit;
 				}else{
+					$imageError = "لطفا یک عکس انتخاب کنید";
 					$everyThingOK = 0;
 				}
 			}
@@ -191,6 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.css">
 <div id="article">
 	<div id="continer">
 		<div class="catview">
@@ -402,9 +405,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</td>
 						<td>
 						  <label for="file-upload" class="custom-file-upload btn btn-black">
-							<i class="fas fa-cloud-upload-alt"></i> انتخاب عکس
+							<span><i class="fas fa-cloud-upload-alt"></i> انتخاب عکس</span>
 						  </label>
-						  <input id="file-upload" type="file" style="display:none;" accept="image/png, image/jpeg" name="chanel_img">
+						  <input id="file-upload" type="file" style="display:none;" accept="image/png, image/jpeg">
+						  <input type="text" style="display:none;" name="chanel_img">
 						  <?php if(!empty($imageError)) echo '<span class="error">'.$imageError.'</span>'; ?>
 						</td>
 					</tr>
@@ -488,8 +492,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				</table>
 			</form>
 		</div>
+
 <script src="<?php echo get_template_directory_uri() ?>/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri() ?>/lib/select2/select2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.js"></script>
 <script>
 <?php
 	echo "var subcats = ". json_encode(get_list_of_subcats()) . ";";
@@ -499,9 +505,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 		/******File Upload on choose file******/
 		$('#file-upload').change(function() {
-		  var i = $(this).prev('label').clone();
-		  var file = $('#file-upload')[0].files[0].name;
-		  $(this).prev('label').text(file);
+			if ($('#file-upload')[0].files && $('#file-upload')[0].files.length > 0) {
+				openCrop(
+					$('#file-upload')[0].files[0],
+					(dataurl)=>{
+						var img = document.createElement("img"); img.src = dataurl;
+						$('input[name="chanel_img"]').val(dataurl);
+						$('.custom-file-upload img').remove();
+						$('.custom-file-upload').append(img);
+					},
+					()=>{$('#file-upload')[0].value = null;}
+				)
+			}
+
 		});
 		/******File Upload on choose file******/
 
@@ -618,6 +634,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				}).trigger('change');
 			}else{
 				$("#form_hashtag_select").parent().parent().css('display','none');
+			}
+		}
+
+		function openCrop(file,onCrop,onExit){
+			var fr = new FileReader();
+			fr.onload = () => {
+				const crop_box_id = `crop_box_${Date.now()}`;
+				$('body').append(`<div class="crop-box" id="${crop_box_id}">
+					<div class="crop-header">
+						<i class="fas fa-times crop-exit"></i>
+						<h3> کراپ عکس </h3>
+						<i class="fas fa-check crop-done"></i>
+					</div>
+					<div class="crop"></div>
+				</div>`);
+				var img = document.createElement("img"); img.src = fr.result;
+				$(`#${crop_box_id} .crop`).append(img)
+				const cropper = new Cropper(img, {
+					viewMode: 1,
+					aspectRatio: 1,
+					dragMode: 'move',
+					toggleDragModeOnDblclick: false,
+					cropBoxResizable: false,
+					rotatable: false,
+					checkOrientation: false,
+					background: false,
+					crop(e) {},
+				});
+				$(`#${crop_box_id} .crop-done`).click(() => {
+					//console.log(dataURLtoBlob(cropper.getCroppedCanvas().toDataURL('image/jpeg')));
+					$(`#${crop_box_id}`).removeClass("crop-box-active");
+					setTimeout(() => {$(`#${crop_box_id}`).remove();}, 600);
+					onCrop(cropper.getCroppedCanvas().toDataURL('image/jpeg'));
+					onExit();
+				});
+				$(`#${crop_box_id} .crop-exit`).click(() => {
+					//console.log(dataURLtoBlob(cropper.getCroppedCanvas().toDataURL('image/jpeg')));
+					$(`#${crop_box_id}`).removeClass("crop-box-active");
+					setTimeout(() => {$(`#${crop_box_id}`).remove();}, 600);
+					onExit();
+				});
+				setTimeout(() => {
+					$(`#${crop_box_id}`).addClass("crop-box-active");
+				}, 10);
+			}
+			fr.readAsDataURL(file);
+			function dataURLtoBlob(dataurl) {
+				var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+					bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+				while (n--) {
+					u8arr[n] = bstr.charCodeAt(n);
+				}
+				return new Blob([u8arr], { type: mime });
 			}
 		}
 </script>
