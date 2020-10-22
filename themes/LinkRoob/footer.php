@@ -9,7 +9,7 @@
 	</div>
 	<div class="footer-left">
 		<div class="about-contact"> 
-			<a href="" class="btn btn-white">تماس با ما</a>
+			<a href="#" class="btn btn-white">تماس با ما</a>
 			<a href="#" class="btn btn-white">درباره ما</a>
 		</div>
 		<div class="trustlogo"><a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=175906&amp;Code=tvXmhdFgoHctbSDcBgbe"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=175906&amp;Code=tvXmhdFgoHctbSDcBgbe" alt="" style="cursor:pointer;filter: drop-shadow(0px 10px 10px #FFF);" id="tvXmhdFgoHctbSDcBgbe"></a></div>
