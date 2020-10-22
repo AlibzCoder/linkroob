@@ -1,12 +1,11 @@
 <?php
-	if(count($_COOKIE) > 0) {
-		if(isset($_COOKIE["rate_name"])) {
-			$user_rate_name = $_COOKIE["rate_name"];
-		}else{
-			$user_rate_name = time();
-			setcookie("rate_name", $user_rate_name, time() + (86400 * 30), "/");
-		}
-    }
+	$user_rate_name;
+	if(isset($_COOKIE["rate_name"])) {
+		$user_rate_name = $_COOKIE["rate_name"];
+	}else{
+		$user_rate_name = time();
+		setcookie("rate_name", $user_rate_name, time() + (86400 * 30), "/");
+	}
 	
 	get_header();
 	have_posts();
