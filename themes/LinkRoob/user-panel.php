@@ -922,7 +922,7 @@ if(is_user_logged_in()){
 													if(!empty($event->link)) $ev.='<a href="'.$event->link.'">';
 														$size = getimagesize(wp_get_upload_dir()['basedir']."/events/".$event->chanel_id."_".$event->id.".jpg");
 														$ev.='<div class="event-img-box"><div class="event-img"><img class="';
-														if($size[0]>$size[1]){$ev.='event-img-horizontal';} 
+														if($size[0]<$size[1]){$ev.='event-img-horizontal';} 
 														else{$ev.='event-img-vertical';}
 														$ev.='" src="'.home_url().'/wp-content/uploads/events/'.$event->chanel_id.'_'.$event->id.".jpg?ver=".rand(111,999).'"></div></div>';
 
