@@ -1,0 +1,1392 @@
+@charset "utf-8";
+
+
+/* flat mega menu layout start */
+.Flat_mega_menu ul,
+.Flat_mega_menu li,
+.Flat_mega_menu a,
+.Flat_mega_menu p,
+.Flat_mega_menu i {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	display: block;
+}
+
+/* mega menu layout */
+.Flat_mega_menu {	
+	min-height: 60px;
+	width: 100%;
+	min-width: 240px;
+	position: relative;
+	z-index: 999;
+	background: #2888d2;
+	background: linear-gradient(45deg, rgba(89,107,233,1) 0%, rgba(250,53,62,1) 100%);
+	display: flex;	
+	flex-direction: row-reverse;
+	top: 0;
+}
+
+/* menu unorderlist layout */
+.Flat_mega_menu > ul {
+	height: 60px;
+	width: 80%;
+    margin-right: 5%;
+}
+
+.Flat_mega_menu .website-name{
+	display: flex;
+	justify-content: flex-end;
+	align-self: center;
+	width: 15%;
+	color: #FFF;
+	font-size: 32px;
+	padding-top: 5px;
+}
+
+/* menu list items layout */
+.Flat_mega_menu > ul > li {
+	float: right;
+	height: 60px;
+	width: 12.5%;
+	border-right: 1px solid rgba(255,255,255,0.1);
+	white-space: nowrap;
+	direction:rtl;
+}
+.Flat_mega_menu > ul > li:first-child{
+	border: none;
+}
+
+/* menu a tag + user_login + search_bar hover effect */
+.Flat_mega_menu > ul > li:hover a,
+.Flat_mega_menu ul .user_login:hover .fa.fa-user,
+.Flat_mega_menu ul .search_bar:hover .fa.fa-search,
+.Flat_mega_menu ul .filter_bar:hover .fas.fa-filter,
+.Flat_mega_menu ul .plus:hover .fas.fa-plus{
+	color: #2888d2;
+	background: #FFFFFF;
+	transition: all 0.2s linear 0s;
+	-moz-transition: all 0.2s linear 0s;
+	-webkit-transition: all 0.2s linear 0s;
+	-ms-transition: all 0.2s linear 0s;
+	-o-transition: all 0.2s linear 0s;
+}
+
+/* menu a tag layout */
+.Flat_mega_menu ul li a {
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+	width: 100%;
+}
+
+/* user_login + search_bar class layout */
+.Flat_mega_menu ul .user_login,
+.Flat_mega_menu ul .search_bar,
+.Flat_mega_menu ul .filter_bar,
+.Flat_mega_menu ul .plus{
+	width: 7.5%;
+	float: right;
+	cursor: pointer;
+}
+
+/* fonntawesome icons laout */
+.Flat_mega_menu ul .user_login .fa.fa-user,
+.Flat_mega_menu ul .search_bar .fa.fa-search,
+.Flat_mega_menu ul .filter_bar .fas.fa-filter,
+.Flat_mega_menu ul .plus .fas.fa-plus{
+	display: block;
+	text-align: center !important;
+	color: #FFFFFF;
+	font-size: large;
+	line-height: 60px;
+}
+
+/* submenu one_col + submenu two_col layout */
+.Flat_mega_menu ul li .submenu.one_col,
+.Flat_mega_menu ul li .submenu.two_col {
+	position: absolute;
+	top: 60px;
+	width: 200px;
+	padding-top: 15px;
+	background-color: #FFFFFF;
+	padding-bottom: 15px;
+	border-bottom: 5px solid #2888d2;
+	display: none;
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+}
+
+/* submenu one_col or two_col list item layout */
+.Flat_mega_menu ul li .submenu.one_col li,
+.Flat_mega_menu ul li .submenu.two_col li {
+	position: relative;
+	height: 40px;
+}
+
+/* submenu one_col or two_col a tag lyout */
+.Flat_mega_menu ul li .submenu.one_col li a,
+.Flat_mega_menu ul li .submenu.two_col li a {
+	text-align: right;
+	text-indent: 27px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 40px;
+	white-space: normal;
+	line-height: 40px;
+	color: #555658;
+}
+
+/* submenu one_col or two_col a tag hover effect */
+.Flat_mega_menu ul li .submenu.one_col li:hover > a,
+.Flat_mega_menu ul li .submenu.two_col li:hover > a {
+	text-indent: 32px;
+	color: #000000
+}
+
+/* second level submenu layout */
+.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col {
+	position: absolute;
+	left: 112.5%;
+	top: -15px;
+	display: none;
+	width: 150px;
+}
+
+/* third level submenu layout */
+.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li .submenu.one_col {
+	left: 116.5%;
+}
+
+/* submenu one_col list item first-child submenu layout */
+.Flat_mega_menu ul li .submenu.one_col li:first-child .submenu.one_col {
+	top: -15px;
+}
+
+/* search bar layout */
+.Flat_mega_menu ul .search_bar {
+	direction:ltr;
+}
+.Flat_mega_menu ul .search_bar ul {
+	background-color: #FFFFFF;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	display: none;
+	border-bottom: 5px solid #2888d2;
+}
+
+/* search bar input text field layout */
+.Flat_mega_menu ul .search_bar ul form input:first-child {
+	width: 84.5%;
+	height: 40px;
+	margin: 17px 1% 17px 2%;
+	font-size: large;
+	text-indent: 20px;
+	text-align: right;
+	direction: rtl;
+	border: 1px solid #cccccc96;
+    border-radius: 3px;
+}
+
+/* search bar submit button layout */
+.Flat_mega_menu ul .search_bar ul form .btn {
+	width: 10%;
+	height: 40px;
+	font-size: large;
+	background: #FFF;
+	cursor: pointer;
+	border: none;
+}
+.Flat_mega_menu ul .search_bar ul form .btn-blue:hover{
+	background: #2888d2;color: #FFF;
+}
+
+
+
+
+/* user login form layout */
+.Flat_mega_menu ul .user_login ul {
+	width: 150px;
+	position: absolute;
+	background: #FFFFFF;
+	padding: 15px;
+	display: none;
+	border-bottom: 5px solid #2888d2;
+	border-left: 1px solid #E4E4E4;
+    border-right: 1px solid #E4E4E4;
+}
+.Flat_mega_menu ul .user_login ul li a{
+	line-height: 30px;
+	margin-bottom: 0.5em;
+	color: #2888d2;
+	padding: 0.2em 0;
+	-webkit-transition: 200ms;
+	transition: 200ms;
+}
+.Flat_mega_menu ul .user_login ul li a:hover{
+	color: #FFF;
+	background: #2888d2;
+}
+.user-name-view{
+	width: 150px;
+	margin-top: 0.5em;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	color: #2888d2;
+	text-align:center;
+}
+
+
+
+.Flat_mega_menu ul .filter_bar ul {
+	z-index : 1000;
+	position: absolute;
+	background: #FFFFFF;
+	padding: 15px;
+	display: none;
+	border-bottom: 5px solid #2888d2;
+	border-left: 1px solid #E4E4E4;
+    border-right: 1px solid #E4E4E4;
+}
+.Flat_mega_menu ul .filter_bar table td i{
+	line-height: 32px;
+	color: #2888d2;
+	float: left;
+}
+
+
+.header-filterbar-chosen .chosen-container span,
+.header-filterbar-chosen .chosen-container-single,
+.header-filterbar-chosen .chosen-drop ul{
+	min-width: 210px;
+	text-align: right;
+}
+.header-filterbar-chosen .chosen-container span{
+	padding-right: 2em;
+	font-size: 15px;
+}
+.header-filterbar-chosen .chosen-container .chosen-single{
+	border-radius: 3px;
+	border: 0;
+	box-shadow: none;
+}
+.header-filterbar-chosen .chosen-container .chosen-single:hover{
+	background: rgba(0, 0, 0, 0.05);
+}
+.header-filterbar-chosen .chosen-container-active.chosen-with-drop .chosen-single{
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background: rgba(0, 0, 0, 0.05);
+}
+.header-filterbar-chosen .chosen-drop ul li{
+	color: #333;
+}
+.header-filterbar-chosen .chosen-drop ul li:hover{
+	background: rgba(0, 0, 0, 0.1);
+	color: #333;
+}
+.header-filterbar-chosen .chosen-drop ul .result-selected,
+.header-filterbar-chosen .chosen-drop ul .highlighted{
+	background: rgba(0, 0, 0, 0.1);
+	color: #333;
+}
+
+
+	/* Rounded sliders */
+.switch-slider.round {
+  border-radius: 34px;
+}
+
+.switch-slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+/* social bar layout */
+.Flat_mega_menu ul .social_bar {
+	position: relative
+}
+
+/* social bar submenu layout */
+.Flat_mega_menu ul .social_bar ul {
+	background: #FFFFFF;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	width: 260px;
+	padding: 20px;
+	display: none;
+	border-bottom: 5px solid #2888d2;
+}
+
+/* social bar list items layout */
+.Flat_mega_menu ul .social_bar ul li {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 40px;
+	padding-top: 10px;
+	line-height: 27px;
+	text-indent: 10px;
+}
+
+/* social bar a tag layout */
+.Flat_mega_menu ul .social_bar ul li a {
+	color: #555658;
+	height: 40px;
+	line-height: 37px;
+	float: left;
+	position: relative;
+	top: -34px;
+	text-align: left;
+	text-indent: 37px;
+}
+
+/* social bar a tag hover effect */
+.Flat_mega_menu ul .social_bar:hover ul li a {
+	background: transparent;
+}
+
+/* social bar fontawesome icons layout */
+.Flat_mega_menu ul .social_bar ul li i {
+	float: left;
+	background: #555658;
+	color: #FFFFFF;
+	padding: 4px;
+	border-radius: 20px;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-indent: 0px;
+}
+
+/* social bar fontawesome icons hover effct */
+.Flat_mega_menu ul .social_bar ul li:hover i {
+	color: #FFFFFF;
+	background: #6d7580;
+}
+
+/* submenu display none */
+.Flat_mega_menu ul li .submenu {
+	display: none;
+	direction: rtl;
+}
+
+/* submenu image container layout */
+.Flat_mega_menu ul li .submenu.img_container {
+	display: none;
+	background-color: #FFFFFF;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 60px;
+	border-bottom: 5px solid #2888d2;
+	padding-bottom: 20px;
+}
+
+/* submenu image container list items layout */
+.Flat_mega_menu ul li .submenu.img_container li {
+	float: left;
+	width: 20.6%;
+	height: 150px;
+	margin: 2% 2% 55px;
+}
+
+/* submenu image container img tag layout */
+.Flat_mega_menu ul li .submenu.img_container li img {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+	border: 5px solid #e9f0f6;
+	cursor: pointer;
+}
+
+/* submenu image container img hover effct */
+.Flat_mega_menu ul li .submenu.img_container li img:hover {
+	opacity: 0.8;
+}
+
+/* submenu image container title class layout */
+.Flat_mega_menu ul li .submenu.img_container .title {
+	font-size: x-large;
+	margin: 20px 16px 6px 2%;
+	width: 90%;
+	height: 20px;
+}
+
+/* submenu image container p tag layout */
+.Flat_mega_menu ul li .submenu.img_container li p {
+	display: block;
+	margin-top: 7px;
+	margin-left: 7px;
+	margin-bottom: 7px;
+	height: 40px;
+	overflow: hidden;
+	white-space: normal;
+	font-size: 14px;
+	color: rgb(85, 86, 88);
+}
+
+/* submenu with four column layout */
+.Flat_mega_menu ul li .submenu.four_col {
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 60px;
+	width: 100%;
+	min-height: 100px;
+	background: #FFFFFF;
+	border-bottom: 5px solid #2888d2;
+	padding-bottom: 20px;
+}
+
+/* submenu with four column list items layout */
+.Flat_mega_menu ul li .submenu.four_col li {
+	float: right;
+	width: 21%;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+
+/* submenu with four column a tag layout */
+.Flat_mega_menu ul li .submenu.four_col li a {
+	color: #555658;
+	text-align: right;
+	white-space: normal;
+	line-height: 40px;
+	margin-bottom: 1px;
+	font-size: 14px;
+}
+
+/* submenu with four column a tag hover effct */
+.Flat_mega_menu ul li .submenu.four_col li:hover a {
+	text-indent: 5px;
+	color: #000000
+}
+
+/* submenu with four column title class layout */
+.Flat_mega_menu ul li .submenu.four_col .title {
+	font-size: large;
+	margin: 2%;
+	font-weight: bold;
+}
+
+/* submenu image container half layout  */
+.Flat_mega_menu ul li .submenu.img_container.half li:first-child {
+	width: 80%
+}
+
+/* submenu image container 4 images layout  */
+.Flat_mega_menu ul li .submenu.img_container.half li:nth-child(even) {
+	clear: both
+}
+
+/* submenu image container with four column  */
+.Flat_mega_menu ul li .submenu.img_container.half .two_col {
+	position: absolute;
+	left: 52%;
+	width: 46%;
+}
+
+/* submenu image container with four column title class layout */
+.Flat_mega_menu ul li .submenu.img_container.half .two_col .title {
+	float: left;
+	width: 48%;
+	clear: none;
+	margin: 20px 2px 2px;
+	height: 29px;
+	border: none;
+}
+
+/* submenu image container with four column list items layout */
+.Flat_mega_menu ul li .submenu.img_container.half .two_col li {
+	float: left;
+	clear: none;
+	width: 48.5%;
+	height: 40px;
+	margin: 9px 1px 0px 0px;
+	border-bottom: 1px solid #E8E8E8;
+}
+
+/* submenu image container with four column a tag lyout */
+.Flat_mega_menu ul li .submenu.img_container.half .two_col li a {
+	text-align: left;
+	line-height: 38px;
+	text-indent: 5px;
+	font-size: 14px;
+	color: rgb(85, 86, 88);
+}
+
+/* submenu image container with four column a tag hover effct */
+.Flat_mega_menu ul li .submenu.img_container.half .two_col li:hover a {
+	text-indent: 10px;
+	color: rgb(0, 0, 0);
+}
+
+/* submenu with two column layout */
+.Flat_mega_menu ul li .submenu.two_col {
+	width: 300px;
+}
+
+/* submenu with two column list items layout */
+.Flat_mega_menu ul li .submenu.two_col li {
+	width: 50%;
+	float: left;
+}
+
+/* second level submenu with two column layout */
+.Flat_mega_menu ul li .submenu.two_col li .submenu.two_col {
+	display: none !important
+}
+
+/* mouse hover display submenus */
+.Flat_mega_menu ul li:hover .submenu.one_col,
+.Flat_mega_menu ul li:hover .submenu.two_col,
+.Flat_mega_menu ul .search_bar:hover ul,
+.Flat_mega_menu ul .user_login:hover ul,
+.Flat_mega_menu ul .filter_bar:hover ul,
+.Flat_mega_menu ul .social_bar:hover ul,
+.Flat_mega_menu ul li:hover .submenu.img_container,
+.Flat_mega_menu ul li:hover .submenu.four_col {
+	display: block;
+
+	/* animation */
+	animation: display_submenus 0.2s linear 0s 1 forwards;
+	-webkit-animation: display_submenus 0.2s linear 0s 1 forwards;
+	-moz-animation: display_submenus 0.2s linear 0s 1 forwards;
+	-ms-animation: display_submenus 0.2s linear 0s 1 forwards;
+	-o-animation: display_submenus 0.2s linear 0s 1 forwards;
+}
+
+/* second level submenu hover effect */
+.Flat_mega_menu ul li .submenu.one_col li:hover > .submenu.one_col {
+	display: block;
+
+	/* animation */
+	animation: display_submenus_second 0.2s linear 0s 1 forwards;
+	-webkit-animation: display_submenus_second 0.2s linear 0s 1 forwards;
+	-moz-animation: display_submenus_second 0.2s linear 0s 1 forwards;
+	-ms-animation: display_submenus_second 0.2s linear 0s 1 forwards;
+	-o-animation: display_submenus_second 0.2s linear 0s 1 forwards;
+}
+
+/* fontawesome arrow icon display on submenus layout */
+.Flat_mega_menu ul li .submenu.one_col li .fa.fa-angle-right {
+	position: absolute;
+	top: 12px;
+	right: -5px;
+	color: #555658;
+}
+
+/* checkbox button layout */
+.Flat_mega_menu .mobile_button,
+.Flat_mega_menu .fa.fa-bars {
+	display:none;
+}
+
+
+
+
+/*site map style*/
+#site_map{
+	background: #3397E4;
+	background: linear-gradient(45deg, rgba(89,107,233,1) 0%, rgba(250,53,62,1) 100%);
+	color: rgba(255,255,255,0.70);
+	border-top: 1px solid rgba(255,255,255,0.1);
+	padding: 0.5em 5%;
+	text-align:right;
+	direction:rtl;
+}
+#site_map a{
+	display:inline-block;
+	color: rgba(255,255,255,0.80);
+}
+#site_map a:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+#site_map span{
+	margin: 0 0.25em;
+}
+@media screen and (max-width: 550px){
+	#site_map {
+		font-size:14px;
+	}
+}
+
+/*site map style*/
+
+
+/* default animation keyframes */
+@keyframes display_submenus {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* animation for chrome and safari */
+@-webkit-keyframes display_submenus {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* animation for firefox */
+@-moz-keyframes display_submenus {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* animation for internet explorer 10+ */
+@-ms-keyframes display_submenus {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* animation for opera */
+@-o-keyframes display_submenus {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* second level submenus default animation */
+@keyframes display_submenus_second {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* second level submenus chrome and safari animation */
+@-webkit-keyframes display_submenus_second {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* second level submenus firefox animation */
+@-moz-keyframes display_submenus_second {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* second level submenus internet explorer 10+ animation */
+@-ms-keyframes display_submenus_second {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+
+/* second level submenus opera animation */
+@-o-keyframes display_submenus_second {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+@keyframes collapse {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 85%;
+	}
+}
+
+
+
+
+
+
+
+
+.nav-icon {
+  width: 60px;
+  display: none;
+}
+.nav-icon div{
+	display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.nav-icon div:after, 
+.nav-icon div:before, 
+.nav-icon div span{
+  background-color: #fff;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 6px;
+  margin: 3px 0;
+  transition: all .4s ease-in-out;
+}
+.nav-icon div:before{
+	width: 65%;
+}
+.nav-icon div span{
+	width: 50%;
+}
+.nav-icon div:after{
+	width: 80%;
+}
+
+
+
+.nav-icon-close div:before {
+  transform: translateY(12px) rotate(135deg);
+  width: 65%;
+}
+.nav-icon-close div:after {
+  transform: translateY(-12px) rotate(-135deg);
+  width: 65%;
+}
+.nav-icon-close div span{
+  transform: scale(0);
+}
+
+
+
+@media screen and (max-width:1100px){
+	.Flat_mega_menu > ul{
+		margin-right: 1%;
+	}
+	.Flat_mega_menu .website-name{
+		width: 19%;
+	}
+}
+@media screen and (max-width:950px){
+	.Flat_mega_menu > ul{
+		margin-right: 0;
+	}
+	.Flat_mega_menu .website-name{
+		width: 19%;
+	}
+	.Flat_mega_menu > ul > li{
+		width: 15%;
+	}
+	.Flat_mega_menu ul li a{
+		font-size: 15.5px;
+	}
+	.Flat_mega_menu ul li:hover .submenu.four_col{
+		display: flex;
+    	flex-wrap: wrap;
+	}
+	.Flat_mega_menu ul li .submenu.four_col li{
+		float: none;
+	}
+	.Flat_mega_menu ul li .submenu.four_col li a,
+	.Flat_mega_menu ul li .submenu.one_col li a{
+		font-size: 13.5px;
+	}
+}
+
+
+
+
+
+
+.menu-dropdown-icon{display: none !important;}
+.Flat_mega_menu ul .user_login .menu-dropdown-icon,
+.Flat_mega_menu ul .search_bar .menu-dropdown-icon{
+	display: inline-flex !important;
+	justify-content: center;
+}
+.Flat_mega_menu ul .search_bar .submenu.one_col{width: 100%;direction: ltr;}
+
+.Flat_mega_menu ul .user_login li{margin: 8px;}
+.Flat_mega_menu ul .user_login .btn.btn-blue{
+	height: auto;
+    line-height: normal;
+    padding: 0.5em 1em;
+    width: fit-content;
+	text-indent: unset !important;
+	margin: 0 auto;
+}
+.Flat_mega_menu ul .user_login .btn.btn-blue:hover{
+    color: #FFF !important;
+    background: #2888d2 !important;
+}
+.Flat_mega_menu ul .user_login .user-name-view{
+	width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@media screen and (max-width:768px){
+
+	.menu-dropdown-icon{
+		display: inline-flex !important;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.2em;
+		color: #fff;
+		padding: 0 1em !important;
+		margin-top: 5px !important;
+    	height: 50px;
+		border-left: 1px solid rgba(255,255,255,0.3);
+	}
+	.menu-dropdown-icon:before{
+		transition: all .2s;
+	}
+
+
+	.Flat_mega_menu{
+		position: fixed;
+		flex-direction: row;
+
+		background: linear-gradient(45deg, rgba(89,107,233,1) -40%, rgba(250,53,62,1) 100%);
+	}
+
+
+	/* menu unorderlist layout */
+	.Flat_mega_menu > ul {
+		position: fixed;
+		background: #2888d2;
+		background: linear-gradient(45deg, rgba(89,107,233,1) 0%, rgba(250,53,62,1) 100%);
+	    top: 60px;
+	    width: 80%;
+	    height: 100%;
+	    transition: 0.4s all ease;
+	    right: -100%;
+	    overflow-y: scroll;
+	    direction: rtl;
+	    padding-bottom: 2em;
+	    margin-right: 0;
+	}
+	.Flat_mega_menu .website-name{
+		width: auto;
+		justify-content: unset;
+		padding-left: 1em;
+	}
+	/* menu list items layout */
+	.Flat_mega_menu > ul > li {
+		float: none;
+		height: 60px;
+		width: 100%;
+		border-left: none;
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		position:relative;
+	}
+	.Flat_mega_menu ul li{
+		height: 60px;
+		display: block;
+	}
+	.Flat_mega_menu ul li:hover a{background: transparent;color: #FFF;}
+	.Flat_mega_menu ul li a{
+		display: inline-block;
+		text-align: right;
+		width: 80%;
+		text-indent: 1em;
+	}
+	.Flat_mega_menu ul .user_login .fa.fa-user,
+	.Flat_mega_menu ul .search_bar .fa.fa-search,
+	.Flat_mega_menu ul .plus .fas.fa-plus{
+		text-align: right !important;
+		text-indent: 2em;
+		direction: rtl;
+	}
+
+
+
+	.Flat_mega_menu ul .user_login .menu-dropdown-icon,
+	.Flat_mega_menu ul .search_bar .menu-dropdown-icon{
+		width: 100% !important;
+		padding: 0 !important;
+		justify-content: end;
+	}
+
+	.Flat_mega_menu ul .user_login:hover .menu-dropdown-icon,
+	.Flat_mega_menu ul .search_bar:hover .menu-dropdown-icon{
+		background:transparent !important;
+		color: #FFF !important;
+	}
+
+	.Flat_mega_menu ul .user_login.expanded .menu-dropdown-icon,
+	.Flat_mega_menu ul .search_bar.expanded .menu-dropdown-icon{
+		color: #2888d2 !important;
+    	background: #FFFFFF !important;
+	}
+
+	/* menu list item first-child layout */
+	.Flat_mega_menu > ul > li:first-child{
+		border-top: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+	}
+	.Flat_mega_menu > ul > li:first-child a{
+		text-indent: 2em;
+		display: block;
+	}
+
+
+	/* user_login + search_bar class layout */
+	.Flat_mega_menu ul .user_login,
+	.Flat_mega_menu ul .plus,
+	.Flat_mega_menu ul .search_bar {
+		width: 100%;
+		float: none;
+		background: transparent;
+		display: block;
+	}
+	.Flat_mega_menu ul .plus a{
+		width: 100%;
+	}
+	
+	.Flat_mega_menu .mobile_button:checked + ul{
+		right: 0;
+	}
+
+	.Flat_mega_menu ul li .submenu.four_col,
+	.Flat_mega_menu ul li .submenu.one_col,
+	.Flat_mega_menu ul .user_login ul,
+	.Flat_mega_menu ul .search_bar ul{
+		position: static;
+		border: none;
+		padding: none;
+	}
+	.Flat_mega_menu ul li .submenu.four_col li{
+		height: 45px;
+		width: 45%;
+	}
+
+	.Flat_mega_menu ul li .submenu.one_col{
+		width: 100%;
+	}
+	.Flat_mega_menu ul li .submenu.one_col li{
+		width: 100%;
+	}
+
+	.Flat_mega_menu ul li .submenu.one_col li a{
+		text-align: right;
+	}
+
+	/* second level submenu layout */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col {
+		position: relative;
+		z-index:999;
+		left:0px;
+		top:0px;
+		padding:0px;
+		margin:0px;
+		display: none;
+		border:none;
+		border-top: 1px solid #E4E4E4;
+		float:left;
+		width: 100%;
+	}
+
+	/* second level submenu a tag layout */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li a{
+		text-indent:40px;
+	}
+
+	/* third level submenu a tag layout */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li .submenu.one_col li a{
+		text-indent:60px;
+	}
+
+	/* submenu hover effect */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li:hover a{
+		text-indent:45px;
+	}
+
+	/* submenu hover effect */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li .submenu.one_col li:hover a{
+		text-indent:65px;
+	}
+	/* third level submenu layout */
+	.Flat_mega_menu ul li .submenu.one_col li .submenu.one_col li .submenu.one_col {
+		left:0px;
+		border-top: 1px solid #E4E4E4;
+	}
+
+	/* fontawesome arrow icon display on submenus layout */
+	.Flat_mega_menu ul li .submenu.one_col li .fa.fa-angle-right {
+		position: absolute;
+		z-index:999;
+		right: 20px;
+		transform:rotate(90deg);
+		-webkit-transform:rotate(90deg);
+		-ms-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+		-o-transform:rotate(90deg);
+	}
+
+	/* submenu image container layout */
+	.Flat_mega_menu ul li .submenu.img_container {
+		display: none;
+		left: 0px;
+		top: 60px;
+		z-index:999;
+	}
+	/* submenu image container list items layout */
+	.Flat_mega_menu ul li .submenu.img_container li {
+		float: left;
+		width: 40.6%;
+		margin: 2% 4% 55px;
+	}
+
+	/* submenu image container title class layout */
+	.Flat_mega_menu ul li .submenu.img_container .title {
+		font-size: large;
+		margin-left: 4%;
+	}
+
+	/* submenu image container 4 images layout  */
+	.Flat_mega_menu ul li .submenu.img_container.half li {
+		clear: both
+	}
+
+	/* submenu image container with four column list items layout */
+	.Flat_mega_menu ul li .submenu.img_container.half .two_col li {
+		float: left;
+		clear: none;
+		width: 97.5%;
+	}
+
+	/* submenu image container with four column title class layout */
+	.Flat_mega_menu ul li .submenu.img_container.half .two_col .title {
+		width: 97%;
+	}
+
+	/* submenu image container with four column title class layout */
+	.Flat_mega_menu ul li .submenu.img_container.half .two_col .title:nth-child(2) {
+		display:none;
+	}
+
+	/* submenu image container with four column a tag lyout */
+	.Flat_mega_menu ul li .submenu.img_container.half .two_col li a {
+		width: auto;
+		padding-right: 5%;
+	}
+
+	/* submenu with four column layout */
+	.Flat_mega_menu ul li .submenu.four_col {
+		display: none;
+		z-index:999;
+		left: 0px;
+		top: 60px;
+	}
+
+	/* submenu with four column a tag layout */
+	.Flat_mega_menu ul li .submenu.four_col li a {
+		display: table;
+		direction: ltr;
+		text-align: left;
+	}
+
+	/* submenu with four column title class layout */
+	.Flat_mega_menu ul li .submenu.four_col .title{
+		margin-bottom: 16px;
+	}
+
+	/* social bar submenu layout */
+	.Flat_mega_menu ul .social_bar ul {
+		position: absolute;
+		z-index:999;
+		top: 60px;
+		left: 0px;
+		width: 100%;
+		padding: 0px;
+		display: none;
+	}
+
+	/* social bar list items layout */
+	.Flat_mega_menu ul .social_bar ul li {
+		width: 20%;
+		position:relative;
+		margin-left: 4%;
+	}
+
+	/* social bar a tag layout */
+	.Flat_mega_menu ul .social_bar ul li a {
+		width: auto;
+		position: absolute;
+		top: 5px;
+		padding-right: 5%;
+		opacity: .5;
+		left: 0%;
+	}
+
+	.Flat_mega_menu ul .search_bar ul{
+		padding-bottom: 3em;
+	}
+	.Flat_mega_menu ul .search_bar ul form{
+		text-align: center;
+		width: 100%;
+	}
+
+	/* search bar input text field layout */
+	.Flat_mega_menu ul .search_bar ul form input:first-child {
+		height: 40px;
+		width: 71.5%;
+		margin: 17px 0;
+		font-size: small;
+	}
+
+	/* search bar submit button layout */
+	.Flat_mega_menu ul .search_bar ul form input:last-child {
+		width: 18%;
+		position: relative;
+		top: 1px;
+		height: 40px;
+		font-size: small;
+	}
+
+	/* user login form table layout */
+	.Flat_mega_menu ul .user_login table{
+		width:100%
+	}
+	/* user login form input field layout */
+	.Flat_mega_menu ul .user_login table tr:nth-child(2) td input,
+	.Flat_mega_menu ul .user_login table tr:nth-child(4) td input {
+		height: 27px;
+		width: 93%;
+	}
+
+	/* user login form input field layout */
+	.Flat_mega_menu ul .user_login table tr:last-child td input {
+		width: 94%;
+		margin-top: 15px;
+		margin-bottom: 18px;
+	}
+
+	/* user login form table layout */
+	.Flat_mega_menu ul .user_login ul form table tr td {
+		text-indent: 3%;
+	}
+
+	/* mobile button layout */
+	.Flat_mega_menu .mobile_button{
+		opacity:0;
+
+	}
+
+	/* mobile buton + fontawesome icon layout */
+	.Flat_mega_menu .mobile_button,
+	.nav-icon {
+		display: block;
+		position: absolute;
+		right: 10px;
+		z-index: 999;
+		height: 60px;
+		width: 9%;
+		cursor:pointer;
+		min-width: 60px;
+	}
+
+	.Flat_mega_menu ul .user_login ul{
+		width:100%;
+		padding: 1em 0;
+	}
+	.Flat_mega_menu ul .user_login ul li a{
+		width: auto;
+	    margin: 0 auto;
+	    display: table;
+	    padding: 0 0.5em;
+	    text-indent: 0;
+	}
+
+
+
+	
+	.Flat_mega_menu ul li:hover .submenu.four_col,
+	.Flat_mega_menu ul li:hover .submenu.one_col{
+		display: none;
+	}
+
+
+
+
+	.Flat_mega_menu ul li{transition: all .2s;}
+	.Flat_mega_menu ul li a,
+	.Flat_mega_menu ul li i{transition: all .2s;}
+
+
+	.Flat_mega_menu ul li.expanded{
+		background-color: #fff;
+		height: auto;
+	}
+	.Flat_mega_menu ul li.expanded a,
+	.Flat_mega_menu ul li.expanded i{color: #2888d2;}
+	.Flat_mega_menu ul li.expanded i:before{transform: rotate(180deg);}
+	.Flat_mega_menu ul li.expanded i{border-color: #FFF;}
+
+	.Flat_mega_menu ul li.expanded .submenu.four_col,
+	.Flat_mega_menu ul li.expanded .submenu.one_col{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+
+
+	.user-name-view{width: 100%;}
+}
+
+@media screen and (max-width:592px){
+
+	/* submenu with four column list items layout */
+	.Flat_mega_menu ul li .submenu.four_col li {
+		width: 89%;
+		margin-right: 8%;
+	}
+	
+	.Flat_mega_menu ul li .submenu.four_col li a{
+		text-align:right;
+		width:100%;
+	}
+
+	/* submenu with four column title class layout */
+	.Flat_mega_menu ul li .submenu.four_col .title {
+		margin: 2% 1% 2% 5%;
+	}
+
+	/* submenu with four column title class layout */
+	.Flat_mega_menu ul li .submenu.four_col .title:nth-child(3),
+	.Flat_mega_menu ul li .submenu.four_col .title:nth-child(4) {
+		display:none;
+	}
+
+	/* submenu with four column title class layout */
+	.Flat_mega_menu ul li .submenu.four_col .title{
+		margin-bottom: 26px;
+	}
+
+
+}
+@media screen and (max-width:480px){
+
+	/* social bar list items layout */
+	.Flat_mega_menu ul .social_bar ul li {
+		width: 40%;
+		position:relative;
+		margin-left: 4%;
+	}
+	/* search bar input text field layout */
+	.Flat_mega_menu ul .search_bar ul form input:first-child {
+		width: 57.5%;
+		margin: 17px 1% 17px 6%;
+	}
+
+	/* search bar submit button layout */
+	.Flat_mega_menu ul .search_bar ul form input:last-child {
+		width: 27%;
+	}
+
+}
+@media screen and (max-width:320px){
+
+	/* submenu image container list items layout */
+	.Flat_mega_menu ul li .submenu.img_container li {
+		float: left;
+		width: 81.5%;
+		margin: 2% 8% 55px;
+	}
+	/* submenu image container title class layout */
+	.Flat_mega_menu ul li .submenu.img_container .title {
+		font-size: large;
+		margin-left: 8%;
+	}
+
+	/* submenu image container with four column  */
+	.Flat_mega_menu ul li .submenu.img_container.half .two_col {
+		position: relative;
+		width: 85%;
+		left: 9%;
+		clear:both;
+		padding:0px;
+		top: 48px;
+		border-top: 2px solid #E8E8E8;
+	}
+
+
+	/* submenu with four column title class layout */
+	.Flat_mega_menu ul li .submenu.four_col .title:nth-child(2) {
+		display:none;
+	}
+
+	/* social bar list items layout */
+	.Flat_mega_menu ul .social_bar ul li {
+		width: 95%;
+		position: relative;
+		margin-left: 8%;
+	}
+	/* search bar input text field layout */
+	.Flat_mega_menu ul .search_bar ul form input:first-child {
+		width: 57.5%;
+		margin: 17px 1% 17px 6%;
+	}
+
+	/* search bar submit button layout */
+	.Flat_mega_menu ul .search_bar ul form input:last-child {
+		width: 27%;
+	}
+	/* user login form input field layout */
+	.Flat_mega_menu ul .user_login table tr:nth-child(2) td input,
+	.Flat_mega_menu ul .user_login table tr:nth-child(4) td input {
+		height: 27px;
+		width: 88%;
+	}
+
+
+
+	/* user login form input field layout */
+	.Flat_mega_menu ul .user_login table tr:last-child td input {
+		width: 89%;
+		margin-top: 15px;
+		margin-bottom: 18px;
+	}
+
+	/* user login form table layout */
+	.Flat_mega_menu ul .user_login ul form table tr td {
+		text-indent: 5%;
+	}
+	/* menu list item first-child a tag layout */
+	.Flat_mega_menu > ul > li:first-child > a{
+		text-indent:30px;
+	}
+}
+
