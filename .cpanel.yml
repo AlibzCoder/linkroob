@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/user/public_html/wp-content/
+    - export DEPLOYPATH=/home/linkroob/public_html/wp-content/
     - /bin/cp -R /home/linkroob/repositories/linkroob/themes $DEPLOYPATH
     - /bin/cp -R /home/linkroob/repositories/linkroob/plugins $DEPLOYPATH
