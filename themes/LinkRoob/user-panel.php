@@ -924,7 +924,7 @@ if(is_user_logged_in()){
 														$ev.='<div class="event-img-box"><div class="event-img"><img class="';
 														if($size[0]>$size[1]){$ev.='event-img-horizontal';} 
 														else{$ev.='event-img-vertical';}
-														$ev.='" src="'.home_url().'/wp-content/uploads/events/'.$event->chanel_id.'_'.$event->id."?ver=".rand(111,999).'"></div></div>';
+														$ev.='" src="'.home_url().'/wp-content/uploads/events/'.$event->chanel_id.'_'.$event->id.".jpg?ver=".rand(111,999).'"></div></div>';
 
 														$ev.='<h4>'.$event->title.'</h4>';
 														if(!empty($event->text)) $ev.='<p>'.$event->text.'</p>';
