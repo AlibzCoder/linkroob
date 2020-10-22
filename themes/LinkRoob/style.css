@@ -1661,8 +1661,8 @@ ul {
 .event-img-horizontal{width: 230px;}
 .event-img-vertical{height: 230px;}
 
-.event p{font-size: 15px;text-align: justify;padding: 0.5em;}
-.event h4{font-size: 18px;margin-top: 0.5em;}
+.event p{font-size: 15px;text-align: justify;padding: 0.5em;color: #4a4a4a;}
+.event h4{font-size: 18px;margin-top: 0.5em;color: #333;}
 
 
 

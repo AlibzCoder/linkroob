@@ -961,8 +961,8 @@ if(is_user_logged_in()){
 					</div>
 					<hr>
 				  </div>
-				  <?php 
-					$posts = get_chanels(0,"publish",null,0,$user->ID);
+				  <?php
+					$posts = get_chanels(0,"all",null,0,$user->ID);
 
 					if(count($posts)>0){ ?>
 					  <table class="chanels-list">
@@ -1073,18 +1073,22 @@ if(is_user_logged_in()){
 									  </td>
 									  <td class="registration-type-1">
 									  	<div style="flex-flow: column;font-size: 13px;line-height:20px;">
-									  	<?php 
-									  		$free = 1;
-									  		if($vip_avaible){
-									  			echo "<span>";
-												echo ' vip برای ';
-									  			echo human_time_diff($post->vip_date,time());
-									  			echo "</span>";
-									  			$free = 0;
-									  			if($post->upgrade){echo '<hr style="width:100%;border: 0.5px solid #333;">';}
-									  		}
-									  		if($post->upgrade){echo "ارتقاع یافته";$free = 0;}
-									  		if($free){echo 'رایگان';}
+										  <?php 
+										  	if($post->post_status=="publish"){
+												$free = 1;
+												if($vip_avaible){
+													echo "<span>";
+													echo ' vip برای ';
+													echo human_time_diff($post->vip_date,time());
+													echo "</span>";
+													$free = 0;
+													if($post->upgrade){echo '<hr style="width:100%;border: 0.5px solid #333;">';}
+												}
+												if($post->upgrade){echo "ارتقاع یافته";$free = 0;}
+												if($free){echo 'رایگان';}
+											}else if($post->post_status=="draft"){
+												echo '<span>در انتظار فعالسازی<br/> توسط مدیر</span>';
+											}
 									  	?>
 									  </div></td>
 									  <td class="story-registration-1">
